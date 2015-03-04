@@ -32,6 +32,15 @@ describe('Thermostat', function() {
 
     });
 
+    it('Reset', function() {
+
+      thermostat.decreaseTemp();
+      thermostat.decreaseTemp();
+      thermostat.tempReset();
+      expect(thermostat.temperature).toEqual(20);
+
+    });
+
   });
 
 });
