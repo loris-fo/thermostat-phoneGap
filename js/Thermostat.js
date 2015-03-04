@@ -39,6 +39,7 @@ Thermostat.prototype.powerSavingOn = function() {
   if(this.temperature > 25) {
     this.temperature = 25;
   };
+  this.powerSave = true;
 };
 
 Thermostat.prototype.energyRating = function() {
@@ -52,4 +53,3 @@ Thermostat.prototype.energyRating = function() {
     return "High usage";
   }
 };
-
