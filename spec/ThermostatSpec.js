@@ -14,6 +14,35 @@ describe('Thermostat', function() {
 
     });
 
+    it('Has a maximum temperature of 25 degrees', function() {
+
+      thermostat.increaseTemp();
+      thermostat.increaseTemp();
+      thermostat.increaseTemp();
+      thermostat.increaseTemp();
+      thermostat.increaseTemp();
+      thermostat.increaseTemp();
+      expect(thermostat.temperature).toEqual(25);
+
+    });
+
+    it('Has a minimum temperature of 10 degrees', function() {
+
+      thermostat.decreaseTemp();
+      thermostat.decreaseTemp();
+      thermostat.decreaseTemp();
+      thermostat.decreaseTemp();
+      thermostat.decreaseTemp();
+      thermostat.decreaseTemp();
+      thermostat.decreaseTemp();
+      thermostat.decreaseTemp();
+      thermostat.decreaseTemp();
+      thermostat.decreaseTemp();
+      thermostat.decreaseTemp();
+      expect(thermostat.temperature).toEqual(10);
+
+    });
+
   });
 
   describe('When on, the thermostat can:', function() {
@@ -38,6 +67,26 @@ describe('Thermostat', function() {
       thermostat.decreaseTemp();
       thermostat.tempReset();
       expect(thermostat.temperature).toEqual(20);
+
+    });
+
+    it('Turn off the Power saving mode', function() {
+      thermostat.powerSavingOff();
+      thermostat.increaseTemp();
+      thermostat.increaseTemp();
+      thermostat.increaseTemp();
+      thermostat.increaseTemp();
+      thermostat.increaseTemp();
+      thermostat.increaseTemp();
+      thermostat.increaseTemp();
+      thermostat.increaseTemp();
+      thermostat.increaseTemp();
+      thermostat.increaseTemp();
+      thermostat.increaseTemp();
+      thermostat.increaseTemp();
+      thermostat.increaseTemp();
+      thermostat.increaseTemp();
+      expect(thermostat.temperature).toEqual(34)
 
     });
 

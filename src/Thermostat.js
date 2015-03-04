@@ -1,18 +1,35 @@
 var Thermostat = function() {
   this.temperature = 20;
+  this.powerSave = true;
 };
 
 Thermostat.prototype.increaseTemp = function() {
-  this.temperature += 1;
+
+  if (this.powerSave === true && this.temperature < 25){
+    this.temperature += 1;
+  }
+  else {
+    if(this.powerSave === false && this.temperature < 35) {
+      this.temperature += 1;
+    };
+
+  };
 
 };
 
 Thermostat.prototype.decreaseTemp = function() {
-  this.temperature -= 1;
+  if (this.temperature > 10) {
+    this.temperature -= 1;
+
+  };
 
 };
 
 Thermostat.prototype.tempReset = function() {
   this.temperature = 20;
 
+};
+
+Thermostat.prototype.powerSavingOff = function() {
+  this.powerSave = false;
 };
