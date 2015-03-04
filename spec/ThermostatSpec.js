@@ -64,7 +64,6 @@ describe('Thermostat', function() {
     it('Reset', function() {
 
       thermostat.decreaseTemp();
-      thermostat.decreaseTemp();
       thermostat.tempReset();
       expect(thermostat.temperature).toEqual(20);
 
@@ -72,21 +71,27 @@ describe('Thermostat', function() {
 
     it('Turn off the Power saving mode', function() {
       thermostat.powerSavingOff();
-      thermostat.increaseTemp();
-      thermostat.increaseTemp();
-      thermostat.increaseTemp();
-      thermostat.increaseTemp();
-      thermostat.increaseTemp();
-      thermostat.increaseTemp();
-      thermostat.increaseTemp();
-      thermostat.increaseTemp();
-      thermostat.increaseTemp();
-      thermostat.increaseTemp();
-      thermostat.increaseTemp();
-      thermostat.increaseTemp();
-      thermostat.increaseTemp();
-      thermostat.increaseTemp();
+      thermostat.temperature = 34;
       expect(thermostat.temperature).toEqual(34)
+
+    });
+
+  });
+
+describe("reflects energy usage with a rating", function() {
+
+    it("less than 18 degrees is considered low usage", function() {
+      thermostat.temperature = 17;
+      expect(thermostat.energyRating()).toEqual("Low usage")
+    });
+
+    it("less than 25 degrees is considered medium usage", function() {
+      expect(thermostat.energyRating()).toEqual("Medium usage")
+    });
+
+    it("25 or above is considered high usage", function() {
+      thermostat.temperature = 25;
+      expect(thermostat.energyRating()).toEqual("High usage")
 
     });
 
