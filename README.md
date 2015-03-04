@@ -20,8 +20,8 @@
 <table>
   <tr>
     <td align="center" width='600px'>
-      <a href="https://raw.githubusercontent.com/nadavmatalon/thermostat/master/public/images/thermostat.png">
-        <img src="/public/images/thermostat.png" />
+      <a
+        <img src="http://cdn1.vox-cdn.com/assets/4586999/lyric-orange.jpg" />
       </a>
     </td>
   </tr>
